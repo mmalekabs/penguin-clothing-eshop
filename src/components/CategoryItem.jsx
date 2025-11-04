@@ -1,4 +1,4 @@
-export const CategoryItem = ({ imageUrl, title }) => {
+const CategoryItem = ({ imageUrl, title }) => {
   return (
     <div className="group relative flex min-w-[30%] h-[240px] flex-[1_1_auto] items-center justify-center border border-black mx-[7.5px] mb-[15px] overflow-hidden hover:cursor-pointer first:mr-[7.5] last:ml-[7.5px] [&.large]:h-[380px]">
       <div

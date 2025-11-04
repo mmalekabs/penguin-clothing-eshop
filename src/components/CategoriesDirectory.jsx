@@ -1,7 +1,7 @@
 import CategoryItem from "./CategoryItem.jsx";
 import categories from "../constants/categories.js";
 
-export const CategoriesDirectory = () => {
+const CategoriesDirectory = () => {
   return (
     <>
       <div className="w-full flex flex-wrap justify-between">
@@ -12,3 +12,5 @@ export const CategoriesDirectory = () => {
     </>
   );
 };
+
+export default CategoriesDirectory;
