@@ -1,10 +1,28 @@
 @import "tailwindcss";
 
+/* Your global base overrides */
 @layer base {
-    html {
-        /* Make Open Sans the default for the entire site */
-        font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system,
-        Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    html, body, #root {
+        height: 100%;
+    }
+
+    body {
+        margin: 0; /* Tailwind already resets this, kept for clarity */
+        font-family: 'Open Sans Condensed', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
     }
 }
