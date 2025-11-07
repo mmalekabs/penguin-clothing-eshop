@@ -46,9 +46,9 @@ const SignUpForm = () => {
   };
 
   return (
-    <>
-      <h1>Sign up with your email and password</h1>
-      <form onSubmit={handleSubmit} noValidate>
+    <div className="">
+      <h2>Sign up with your email and password</h2>
+      <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"
           type="text"
@@ -91,7 +91,7 @@ const SignUpForm = () => {
 
         <Button type="submit">Sign Up</Button>
       </form>
-    </>
+    </div>
   );
 };
 

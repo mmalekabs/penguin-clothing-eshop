@@ -1,20 +1,74 @@
+/* 1) Google Fonts import MUST be the first thing in the file */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* 2) Tailwind import comes after URL imports */
 @import "tailwindcss";
 
-/* Your global base overrides */
+/* 3) Define a theme font token that maps to the Google font */
+@theme {
+    --font-sans: "Open Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    /* Optional: define a mono fallback if you use <code> elements */
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* 4) Base overrides */
 @layer base {
-    html, body, #root {
+
+    h1 {
+        font-family: var(--font-sans), sans-serif;
+        font-size: 2rem;        /* 32px */
+        line-height: 1.2;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+    }
+    @media (min-width: 640px) {
+        h1 { font-size: 2.5rem; } /* 40px on sm+ */
+    }
+
+    h2 {
+        font-family: var(--font-sans), sans-serif;
+        font-size: 1.5rem;      /* 24px */
+        line-height: 1.3;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-family: var(--font-sans), sans-serif;
+        font-size: 1.25rem;     /* 20px */
+        line-height: 1.35;
+        font-weight: 700;
+    }
+    html,
+    body,
+    #root {
         height: 100%;
     }
 
+    /* Use Tailwind’s font token globally */
+    :root {
+        font-family: var(--font-sans), sans-serif;
+    }
+
     body {
-        margin: 0; /* Tailwind already resets this, kept for clarity */
-        font-family: 'Open Sans Condensed', sans-serif;
+        margin: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
+    /* Ensure form controls inherit the global font */
+    button,
+    input,
+    select,
+    textarea {
+        font: inherit;        /* inherits family, size, weight, line-height */
+        font-family: inherit, sans-serif; /* extra explicit */
+    }
+
     code {
-        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+        font-family: var(--font-mono), sans-serif;
     }
 
     a {
@@ -22,7 +76,9 @@
         color: black;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         box-sizing: border-box;
     }
 }

@@ -1,8 +1,8 @@
 const baseBtn =
   "inline-flex items-center justify-center cursor-pointer select-none " +
   // size/shape/typography
-  "min-w-[165px] h-[50px] leading-[50px] px-[35px] text-[15px] tracking-[0.5px] " +
-  "uppercase font-extrabold font-['Open_Sans_Condensed'] border border-transparent " +
+  "min-w-[165px] h-[50px] px-[35px] text-[15px] tracking-[0.5px] " +
+  "uppercase font-extrabold border border-transparent " +
   // transitions
   "transition-colors duration-150";
 
